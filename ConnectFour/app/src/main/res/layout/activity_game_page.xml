@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kevin.connectfour.GamePage"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.32">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Game"
+            android:id="@+id/NewGame"
+            android:background="@android:color/holo_green_light"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/GameBoard"
+            android:onClick="restartGame" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retract"
+            android:id="@+id/Retract"
+            android:background="@android:color/holo_red_dark"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:onClick="retract"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GameBoard"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/Retrieve">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.32"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/tvTotalMove"
+                android:layout_marginLeft="37dp"
+                android:layout_below="@+id/ivTurnCell"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Turn"
+                android:id="@+id/tvTurn"
+                android:layout_weight="0.04"
+                android:layout_marginLeft="24dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="50dp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/ivTurnCell"
+                android:layout_weight="0.05"
+                android:layout_gravity="center_vertical"
+                android:layout_alignTop="@+id/tvTurn"
+                android:layout_toEndOf="@+id/tvTurn"
+                android:layout_marginStart="10dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
